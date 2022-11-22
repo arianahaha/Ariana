@@ -1,0 +1,19 @@
+---
+title: "survival_probs_vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{survival_probs_vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(Ariana)
+```
