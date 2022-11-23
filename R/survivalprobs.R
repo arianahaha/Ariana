@@ -29,7 +29,7 @@ survival.probs = function(time, event) {
     if (i == 1 & event[i]==1) {
       probabilities[1] = 1 * ((N - 1) / N)
 
-    } else if (i ==1 & event ==0) {
+    } else if (i ==1 & event[i] ==0) {
       probabilities[1] = 1
 
     } else {
