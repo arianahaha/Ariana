@@ -26,10 +26,10 @@ survival.probs = function(time, event) {
   #need to add first timepoint AND censoring or first time point AND death
 
   for (i in 1:length(event)) {
-    if (i == 1 && event[i]==1) {
+    if (i == 1 & event[i]==1) {
       probabilities[1] = 1 * ((N - 1) / N)
 
-    } else if (i ==1 && event ==0) {
+    } else if (i ==1 & event ==0) {
       probabilities[1] = 1
 
     } else {
