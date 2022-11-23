@@ -7,7 +7,9 @@
 survival.probs(time, event)
 }
 \arguments{
-\item{x}{vector of times and vector of events}
+\item{time}{vector of times}
+
+\item{event}{vector of events}
 }
 \value{
 vector of survival probabilities

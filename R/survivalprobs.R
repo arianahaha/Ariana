@@ -2,7 +2,8 @@
 #'
 #'Gets a vector of survival probabilities for each time point
 #'
-#'@param x vector of times and vector of events
+#'@param time vector of times
+#'@param event vector of events
 #'
 #'@return vector of survival probabilities
 #'
