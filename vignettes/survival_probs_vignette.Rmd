@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(Ariana)
+library(survival)
 ```
 
 This package takes a vector of time intervals and vector of events to calculate the survival probabilities at each interval time point. 
@@ -38,3 +39,19 @@ We can then view these probabilities as a curve
 plot(survival)
 
 ```
+
+The function survival.probs() computes survival probabilities and returns a vector of these probabilities. This is the same function as a multi-step process in the survival package:
+1. Compute a Surv object using a vector of time and a vector of events.
+2. Use the survfit() function to compute the components of a survival curve
+3. Extract the probabilities with the summary() function.
+We can compare survival.probs() and summary(survfit(Surv)):
+```{r}
+time = c(1:6000)
+event = sample(c(0,1), replace=TRUE, size=6000)
+
+ariana_function = survival.probs(time, event)
+survival_function = summary(survfit(Surv(time, event)~1))$surv
+
+all.equal(ariana_function, survival_function)
+```
+

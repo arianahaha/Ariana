@@ -8,7 +8,7 @@
 [![R-CMD-check](https://github.com/arianahaha/Ariana/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/arianahaha/Ariana/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The goal of Ariana is to computer survival probabilities
+The goal of Ariana is to compute survival probabilities
 
 ## Installation
 
