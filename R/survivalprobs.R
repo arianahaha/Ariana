@@ -13,3 +13,57 @@
 #'
 #'@export
 #'
+survival.probs = function(time, event) {
+
+  probabilities = c()
+  N = length(event)
+
+  #ensure that the vectors are in order of event:
+  o = order(time, decreasing = FALSE)
+  time.sorted = time[o]
+  event.sorted = event[o]
+
+  #need to add first timepoint AND censoring or first time point AND death
+
+  for (i in 1:length(event)) {
+    if (i == 1 && event[i]==1) {
+      probabilities[1] = 1 * ((N - 1) / N)
+
+    } else if (i ==1 && event ==0) {
+      probabilities[1] = 1
+
+    } else {
+      #compute probabilities for the rest of the events:
+
+      if (event[i] == 1) {
+        probabilities[i] = probabilities[i - 1] * ((N - 1) / N) #subtract 1 from number at risk
+        #compute probability ^
+
+      } else {
+        probabilities[i] = probabilities[i-1]
+      }
+    }
+    N = N - 1
+  }
+  return(probabilities[which(event==1)])
+}
+
+# time = c(1,2,3,4,5)
+# event = c(0,1,1,1,1)
+#
+# summary(survfit(Surv(time, event)~1))
+#
+# survival.probs(time,event)
+#
+# dig <- read.csv("dig.csv")
+# survival <- survival.probs(dig$WHFDAYS, dig$WHF)
+#
+# survfit2(survival~1, data = dig)
+#
+# install.packages("ggsurvfit")
+# library(ggsurvfit)
+# install.packages("ggplot2")
+# install.packages("ggfortify")
+# library(ggplot2)
+# library(ggfortify)
+# autoplot(survival)

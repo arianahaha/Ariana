@@ -17,3 +17,24 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(Ariana)
 ```
+
+This package takes a vector of time intervals and vector of events to calculate the survival probabilities at each interval time point. 
+
+
+
+```{r}
+time = c(1:1000)
+event = sample(c(0,1), replace=TRUE, size=1000)
+```
+
+"time" should be a vector of time intervals, such as days or years, until an event of interest occurs. Typically, survival calculations are used to compare the amount of time a participant in a trial or observational study persists in the study until either death or other departure of the study, known as censoring. "event" is a vector of these events, which are recorded as a "0" (no event) or a "1" for death.
+
+```{r}
+survival <- survival.probs(time = time, event = event)
+```
+
+We can then view these probabilities as a curve
+```{r}
+plot(survival)
+
+```
