@@ -47,23 +47,3 @@ survival.probs = function(time, event) {
   }
   return(probabilities[which(event==1)])
 }
-
-# time = c(1,2,3,4,5)
-# event = c(0,1,1,1,1)
-#
-# summary(survfit(Surv(time, event)~1))
-#
-# survival.probs(time,event)
-#
-# dig <- read.csv("dig.csv")
-# survival <- survival.probs(dig$WHFDAYS, dig$WHF)
-#
-# survfit2(survival~1, data = dig)
-#
-# install.packages("ggsurvfit")
-# library(ggsurvfit)
-# install.packages("ggplot2")
-# install.packages("ggfortify")
-# library(ggplot2)
-# library(ggfortify)
-# autoplot(survival)
