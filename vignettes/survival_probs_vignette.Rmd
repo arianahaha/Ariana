@@ -20,8 +20,6 @@ library(Ariana)
 
 This package takes a vector of time intervals and vector of events to calculate the survival probabilities at each interval time point. 
 
-
-
 ```{r}
 time = c(1:1000)
 event = sample(c(0,1), replace=TRUE, size=1000)

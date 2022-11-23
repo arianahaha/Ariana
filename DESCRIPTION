@@ -2,9 +2,9 @@ Package: Ariana
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
+    person("Ariana", "Haidari", , "arianahaidari@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: Calculates survival probabilities from time and event data.
 License: GPL-2
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
